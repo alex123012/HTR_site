@@ -1,11 +1,10 @@
 const formData = new FormData();
-const fileField = document.querySelector('input[type="file"]');
+const fileField = document.querySelector('input[type="text"]');
 
-formData.append('username', 'abc123');
-formData.append('avatar', fileField.files[0]);
+formData.append('lol', fileField.files[0]);
 
 try {
-  const response = await fetch('https://example.com/profile/avatar', {
+  const response = fetch('https://reqres.in/api/products/3', {
     method: 'PUT',
     body: formData
   });
