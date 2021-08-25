@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTR</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.sinapstek.com/upload/images/vizyon.jpg" type="image/jpg">
+    <link rel="icon" href="https://www.sinapstek.com/upload/images/vizyon.jpg" type="image/jpg">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,16 +22,15 @@
             <form method="post" enctype="multipart/form-data">
                 <input id='fileid' type='file' hidden/>
                 <div id="contact-form">
-                    <button class="submit">UPLOAD YOUR HANDWRITTEN PIRCTURE</button>
+                    <input id="buttonid" type="button" value="UPLOAD YOUR HANDWRITTEN PIRCTURE"/>
                     <script>
-                        document.getElementsByClassName('btn-rounded-white').addEventListener('click', openDialog);
+                        document.getElementById('buttonid').addEventListener('click', openDialog);
 
                         function openDialog() {
                           document.getElementById('fileid').click();
                         }
                     </script>
-                    <h3>or enter text link to it</h3>
-                    <input type='textarea' class="button"/>
+                    <input type='textarea' class="button" placeholder="or enter text link to it" />
                     <button class="button">Submit</button>
                 </div>
             </form>
