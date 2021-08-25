@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
-	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTR</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-	<div>Hello world</div>
-	<div>
-        <form action='script.js'>
-            <input type="text" name="test"/>
-            <button type="submit">Send</button>
-        </form>
+    <div id="lead">
+        <div id="lead-content">
+            <h1>HTR</h1>
+            <h2>Best motherfucker</h2>
+            <form method="post" enctype="multipart/form-data">
+                <input id='fileid' type='file' hidden/>
+                <div id="contact-form">
+                    <button class="submit">UPLOAD YOUR HANDWRITTEN PIRCTURE</button>
+                    <script>
+                        document.getElementsByClassName('btn-rounded-white').addEventListener('click', openDialog);
+
+                        function openDialog() {
+                          document.getElementById('fileid').click();
+                        }
+                    </script>
+                    <h3>or enter text link to it</h3>
+                    <input type='textarea' class="button"/>
+                    <button class="button">Submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
     </div>
+    <!-- End #lead -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2021 MAKHONIN ALEX
+                    </p>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
+
+</html>
