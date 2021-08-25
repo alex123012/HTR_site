@@ -35,7 +35,7 @@ function submit_file() {
         method: "POST",
         body: img_url
     }).then(response => response.text())
-      .then(text_answer => recogn.innerHTML = img_file.value);
+      .then(text_answer => recogn.innerHTML = window.URL.createObjectURL(img_file));
 }
 
 function submit_text() {
@@ -45,3 +45,4 @@ function submit_text() {
     }).then(response => response.text())
       .then(text_answer => recogn.innerHTML = text_answer);
 }
+// var objectURL = window.URL.createObjectURL(fileObj);
