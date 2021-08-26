@@ -1,4 +1,4 @@
-const api_url = "https://mts.pythonanywhere.com";
+const api_url = "https://mtshw.pythonanywhere.com";
 // const api_url = "http://127.0.0.1:5000";
 const recogn = document.getElementById('recogn');
 
