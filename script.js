@@ -1,7 +1,5 @@
-const api_url= "https://reqres.in/api/users"
-const img_file = document.getElementById('fileid')
-const img_url = document.getElementById('texturl')
-const recogn = document.getElementById('recogn')
+const api_url= "http://mts.pythonanywhere.com";
+const recogn = document.getElementById('recogn');
 
 document.getElementById('buttonid').addEventListener('click', openDialog);
 
@@ -31,18 +29,27 @@ function openDialog() {
 }
     
 function submit_file() {
-    fetch(api_url, {
-        method: "POST",
-        body: img_url
-    }).then(response => response.text())
-      .then(text_answer => recogn.innerHTML = window.URL.createObjectURL(img_file));
+    const img_file = document.getElementById('fileid').files[0];
+    let formData = new FormData();
+         
+    formData.append("file", img_file);
+
+    submit(formData);
 }
 
 function submit_text() {
-    fetch(api_url, {
-        method: "POST",
-        body: img_url
-    }).then(response => response.text())
-      .then(text_answer => recogn.innerHTML = text_answer);
+    const img_url = document.getElementById('texturl').value;
+
+    submit(img_url);
+    
 }
-// var objectURL = window.URL.createObjectURL(fileObj);
+
+function submit(url) {
+    recogn.innerHTML = 'Wait...'
+    fetch(api_url, {
+        mode: 'cors',
+        method: "POST",
+        body: url
+    }).then(response => response.json())
+      .then(text_answer => recogn.innerHTML = text_answer['prediction']);
+}
