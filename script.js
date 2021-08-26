@@ -39,6 +39,6 @@ function submit(url) {
             'Accept': 'application/json'
         },
         body: url
-    }).then(response => recogn.innerHTML = response.text()['prediction'])
+    }).then(response => recogn.innerHTML = response.json()['prediction'])
 
 }
