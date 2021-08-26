@@ -42,6 +42,7 @@ function submit(url) {
         // },
         body: url
     })
+    .catch(error => console.log(error))
     .then(response => recogn.innerHTML = response.json())
     .catch(error => console.log(error))
     .then(text_a => recogn.innerHTML = text_a['prediction'])
