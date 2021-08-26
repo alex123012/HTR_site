@@ -22,6 +22,7 @@ function submit_file() {
 
 function submit_text() {
     const img_url = document.getElementById('texturl').value;
+    console.log(img_url);
     let formData = new FormData();
          
     formData.append("url", img_url);
