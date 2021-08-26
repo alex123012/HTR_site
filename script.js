@@ -1,4 +1,4 @@
-const api_url= "http://mts.pythonanywhere.com";
+const api_url= "https://mts.pythonanywhere.com";
 const recogn = document.getElementById('recogn');
 
 document.getElementById('buttonid').addEventListener('click', openDialog);
