@@ -47,7 +47,7 @@ function submit_text() {
 function submit(url) {
     recogn.innerHTML = 'Wait...'
     fetch(api_url, {
-        mode: 'cors',
+        mode: 'no-cors',
         method: "POST",
         body: url
     }).then(response => response.json())
