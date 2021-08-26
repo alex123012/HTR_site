@@ -15,7 +15,6 @@ function openDialog() {
 function submit_file() {
     const img_file = document.getElementById('fileid').files[0];
     let formData = new FormData();
-         
     formData.append("file", img_file);
 
     submit(formData);
@@ -23,8 +22,11 @@ function submit_file() {
 
 function submit_text() {
     const img_url = document.getElementById('texturl').value;
+    let formData = new FormData();
+         
+    formData.append("url", img_url);
 
-    submit(img_url);
+    submit(formData);
     
 }
 
@@ -32,13 +34,15 @@ function submit_text() {
 function submit(url) {
     recogn.innerHTML = 'Wait...';
     fetch(api_url, {
-        mode: 'no-cors',
         method: "POST",
-        headers : { 
-            'Content-Type': "image/*",
-            'Accept': 'application/json'
-        },
+        // headers : { 
+        //     'Content-Type': "image/*",
+        //     'Accept': 'application/json'
+        // },
         body: url
-    }).then(response => recogn.innerHTML = response.json()['prediction'])
+    })
+    .then(response => recogn.innerHTML = response.json())
+    .catch(error => console.log(error))
+    .then(text_a => recogn.innerHTML = text_a['prediction'])
 
 }
